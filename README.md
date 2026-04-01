@@ -39,5 +39,6 @@ Each group member worked on their own branch:
 
 
 #### Final Main Branch
-<img width="907" height="304" alt="Screenshot 2026-03-31 at 21 37 36" src="https://github.com/user-attachments/assets/1827f52f-2136-41c6-948e-6d839376791f" />
+<img width="1818" height="692" alt="image" src="https://github.com/user-attachments/assets/93a75088-a864-4a00-af6d-77aa5a3cf73b" />
+
 
