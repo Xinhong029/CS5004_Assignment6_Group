@@ -33,7 +33,8 @@ Each group member worked on their own branch:
 
 
 #### Pull Requests / Merges
-<img width="837" height="432" alt="截屏2026-03-31 22 08 03" src="https://github.com/user-attachments/assets/03a74b06-9b0e-402d-8795-87f6c7f8e5b5" />
+<img width="600" height="363" alt="截屏2026-03-31 22 12 01" src="https://github.com/user-attachments/assets/0637191a-9ee3-42cd-b64a-9c8b91edb55b" />
+
 
 
 
