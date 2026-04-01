@@ -28,9 +28,15 @@ Each group member worked on their own branch:
 ### Screenshots
 
 #### Branch Overview
+<img width="336" height="376" alt="Screenshot 2026-03-31 at 21 36 47" src="https://github.com/user-attachments/assets/305147ce-68ad-422c-80a0-e4d1fe323d81" />
+
 
 
 #### Pull Requests / Merges
+<img width="575" height="289" alt="Screenshot 2026-03-31 at 21 37 24" src="https://github.com/user-attachments/assets/67dc8d0c-662a-490e-9f61-56d376b82654" />
+
 
 
 #### Final Main Branch
+<img width="907" height="304" alt="Screenshot 2026-03-31 at 21 37 36" src="https://github.com/user-attachments/assets/1827f52f-2136-41c6-948e-6d839376791f" />
+
