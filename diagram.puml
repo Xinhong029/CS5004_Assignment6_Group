@@ -1,0 +1,69 @@
+@startuml Insurance Communication System
+
+skinparam classAttributeIconSize 0
+skinparam classFontStyle bold
+skinparam packageStyle rectangle
+
+package "command" {
+
+  class CommandLineParser {
+    + parse(args : String[]) : CommandOptions
+    - readRequiredPathArgument(args : String[], currentIndex : int, optionName : String) : Path
+    - validate(generateEmail : boolean, generateLetter : boolean, emailTemplate : Path, letterTemplate : Path, outputDir : Path, csvFile : Path) : void
+  }
+
+  class CommandOptions {
+    - generateEmail : boolean
+    - generateLetter : boolean
+    - emailTemplate : Path
+    - letterTemplate : Path
+    - outputDir : Path
+    - csvFile : Path
+    + CommandOptions(generateEmail : boolean, generateLetter : boolean, emailTemplate : Path, letterTemplate : Path, outputDir : Path, csvFile : Path)
+    + shouldGenerateEmail() : boolean
+    + shouldGenerateLetter() : boolean
+    + getEmailTemplate() : Path
+    + getLetterTemplate() : Path
+    + getOutputDir() : Path
+    + getCsvFile() : Path
+  }
+
+  CommandLineParser ..> CommandOptions : <<creates>>
+}
+
+package "csv" {
+
+  class CsvParser {
+    + parse(csvPath : Path) : List<Map<String, String>>
+    - parseLine(line : String) : List<String>
+  }
+}
+
+package "template" {
+
+  class TemplateEngine {
+    - PLACEHOLDER_PATTERN : Pattern
+    + readTemplate(templatePath : Path) : String
+    + render(template : String, rowData : Map<String, String>) : String
+  }
+
+  class FileGenerator {
+    + generateFiles(records : List<Map<String, String>>, template : String, outputDir : Path, type : String, templateEngine : TemplateEngine) : void
+    - buildFileName(row : Map<String, String>, type : String, recordNumber : int) : String
+    - sanitize(value : String) : String
+  }
+
+  FileGenerator ..> TemplateEngine : <<uses>>
+}
+
+class Main {
+  + {static} main(args : String[]) : void
+}
+
+Main ..> CommandLineParser : <<uses>>
+Main ..> CommandOptions : <<uses>>
+Main ..> CsvParser : <<uses>>
+Main ..> TemplateEngine : <<uses>>
+Main ..> FileGenerator : <<uses>>
+
+@enduml
